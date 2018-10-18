@@ -3,9 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	<properties resource = "kr/or/ddit/db/db.properties"/>
+	<properties resource="kr/or/ddit/db/db.properties" />
 	<typeAliases>
-		<typeAlias type="kr.or.ddit.user.model.UserVO" alias="userVo"/>
+		<typeAlias type="kr.or.ddit.user.model.UserVO" alias="userVo" />
+		<typeAlias type="kr.or.ddit.prod.model.ProdVO" alias="prodVo"/>
 	</typeAliases>
 
 	<environments default="development">
@@ -17,10 +18,16 @@
 				<property name="username" value="${db.username}" />
 				<property name="password" value="${db.password}" />
 			</dataSource>
+
+			<!-- <dataSource type="JNDI"> connection pool -->
+			<!-- <property name="data_source" value="java:comp/env/jdbc/oracleDB" 
+				/> -->
+			<!-- </dataSource> -->
 		</environment>
 	</environments>
 	<mappers>
 		<mapper resource="kr/or/ddit/db/temp.xml" />
 		<mapper resource="kr/or/ddit/db/user.xml" />
+		<mapper resource="kr/or/ddit/db/prod.xml" />
 	</mappers>
 </configuration>

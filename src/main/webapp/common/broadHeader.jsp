@@ -30,10 +30,10 @@
 						class="icon-bar"></span>
 				</button>
 
-				<a class="navbar-brand" href="#">JSP/SPRING 
+				<a class="navbar-brand" href="#">
 					<c:if
 						test="${S_USER.name != null }">
-						${S_USER.name } 님 안녕하세요.					
+						${S_USER.name} 님 안녕하세요.					
 					</c:if>
 				</a>
 

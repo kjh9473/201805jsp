@@ -83,7 +83,8 @@ public class LoginServlet extends HttpServlet{
 			HttpSession session = req.getSession();
 			
 //			session.setAttribute("userVo",userVo.getName()+"["+userVo.getAlias()+"]");
-			session.setAttribute("userVo",user);
+//			session.setAttribute("userVo",user);
+			session.setAttribute("S_USER", user);
 			//2.main.jsp
 			//body 영역에
 			//이름 [별명]

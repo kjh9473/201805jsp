@@ -6,6 +6,9 @@
 <%@page import="kr.or.ddit.user.model.UserVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +64,6 @@ $(document).ready(function () {
 </script>
 </head>
 <body>
-<% UserVO userVo2 = (UserVO)request.getAttribute("userVo"); %>
 	<%-- header --%>
 	<%@ include file="/common/header.jsp"%>
 
@@ -78,7 +80,7 @@ $(document).ready(function () {
 					<div class="form-group">
 						<label for="userNm" class="col-sm-2 control-label">사용자 사진</label>
 						<div class="col-sm-10">
-							<img alt="" src="<%=userVo2.getProfile()%>" width="200" height="200">
+							<img alt="" src="${userVo.profile }" width="200" height="200">
 							<input type="file" name="profile" ><br>
 						</div>
 					</div>
@@ -87,7 +89,7 @@ $(document).ready(function () {
 						<label for="userNm" class="col-sm-2 control-label">사용자 아이디</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="userId" name="userId"
-								placeholder="사용자 아이디" value = "<%=userVo2.getUserId() %>" readonly="readonly">
+								placeholder="사용자 아이디" value = "${userVo.userId }" readonly="readonly">
 						</div>
 					</div>
 					
@@ -95,7 +97,7 @@ $(document).ready(function () {
 						<label for="userNm" class="col-sm-2 control-label">비밀번호</label>
 						<div class="col-sm-10">
 							<input type="password" class="form-control" id="pass" name="pass"
-								placeholder="패스워드" value ="<%=userVo2.getPass() %>">
+								placeholder="패스워드" value ="${userVo.pass }">
 						</div>
 					</div>
 
@@ -103,7 +105,7 @@ $(document).ready(function () {
 						<label for="userNm" class="col-sm-2 control-label">이름</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="name" name="name"
-								placeholder="사용자 이름" value="<%=userVo2.getName() %>">
+								placeholder="사용자 이름" value="${userVo.name}">
 						</div>
 					</div>
 
@@ -111,7 +113,7 @@ $(document).ready(function () {
 						<label for="userNm" class="col-sm-2 control-label">주소</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="addr1" name="addr1"
-								placeholder="주소" readonly value="<%=userVo2.getAddr1()%>"> <br>
+								placeholder="주소" readonly value="${userVo.addr1}"> <br>
 								<button id = "addrSearchBtn" type="button" class="btn btn-default" >주소검색</button>
 						</div>
 					</div>
@@ -120,7 +122,7 @@ $(document).ready(function () {
 						<label for="userNm" class="col-sm-2 control-label">상세주소</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="addr2" name="addr2"
-								placeholder="상세주소" value="<%=userVo2.getAddr2()%>">
+								placeholder="상세주소" value="${userVo.addr2}">
 						</div>
 					</div>
 
@@ -128,7 +130,7 @@ $(document).ready(function () {
 						<label for="userNm" class="col-sm-2 control-label">우편번호</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="zipcd" name="zipcd"
-								placeholder="우편번호" readonly value="<%=userVo2.getZipcd() %>">
+								placeholder="우편번호" readonly value="${userVo.zipcd}">
 						</div>
 					</div>
 
@@ -136,11 +138,7 @@ $(document).ready(function () {
 						<label for="userNm" class="col-sm-2 control-label">생년월일</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="birth" name="birth"
-							<% 
-								Date birth = userVo2.getBirth();
-								SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-							%>
-								placeholder="생년월일" value="<%=format.format(birth)%>">
+							placeholder="생년월일" value="<fmt:formatDate value="${userVo.birth}" pattern="yyyy-MM-dd" />">
 						</div>
 					</div>
 
@@ -148,7 +146,7 @@ $(document).ready(function () {
 						<label for="userNm" class="col-sm-2 control-label">이메일</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="email" name="email"
-								placeholder="이메일" value="<%=userVo2.getEmail() %>">
+								placeholder="이메일" value="${userVo.email }">
 						</div>
 					</div>
 
@@ -156,7 +154,7 @@ $(document).ready(function () {
 						<label for="userNm" class="col-sm-2 control-label">연락처</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="tel" name="tel"
-								placeholder="연락처" value="<%=userVo2.getTel()%>">
+								placeholder="연락처" value="${userVo.tel }">
 						</div>
 					</div>
 
