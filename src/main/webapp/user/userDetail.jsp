@@ -49,25 +49,11 @@
 <!--  						UserVO userDetail = (UserVO) request.getAttribute("userVo"); -->
 <%-- 					%> --%>
 					<%@ include file="/common/basicLib.jsp" %>
-					<div class="form-group">
-						<label for="userNm" class="col-sm-2 control-label">사용자 사진</label>
-						<div class="col-sm-10">
-							<c:choose>
-								<c:when test="${userVo.profile != null }">
-									<img src="${userVo.profile }" width="200" height="200"/>
-								</c:when>
-								<c:otherwise>
-									<img src="/profile/noimage.jpg" width="200" height="200">
-								</c:otherwise>
-							</c:choose>
-							
-						</div>
-					</div>
-
+				
 					<div class="form-group">
 						<label for="userNm" class="col-sm-2 control-label">사용자 아이디</label>
 						<div class="col-sm-10">
-							<label class="control-label" >${userVo.userId}</label>
+							<label class="control-label" >${bulVo.bul_id}</label>
 						</div>
 					</div>
 

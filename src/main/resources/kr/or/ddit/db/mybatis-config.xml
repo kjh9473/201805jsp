@@ -7,6 +7,8 @@
 	<typeAliases>
 		<typeAlias type="kr.or.ddit.user.model.UserVO" alias="userVo" />
 		<typeAlias type="kr.or.ddit.prod.model.ProdVO" alias="prodVo"/>
+		<typeAlias type="kr.or.ddit.board.model.BulletinVO" alias="bulVo"/>
+		<typeAlias type="kr.or.ddit.board.model.BoardVO" alias="brdVo"/>
 	</typeAliases>
 
 	<environments default="development">
@@ -29,5 +31,6 @@
 		<mapper resource="kr/or/ddit/db/temp.xml" />
 		<mapper resource="kr/or/ddit/db/user.xml" />
 		<mapper resource="kr/or/ddit/db/prod.xml" />
+		<mapper resource="kr/or/ddit/db/board.xml" />
 	</mappers>
 </configuration>

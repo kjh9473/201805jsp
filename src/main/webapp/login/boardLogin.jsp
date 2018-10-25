@@ -49,7 +49,7 @@
 	form 태그의 method 속성 : get/post 
 --%>
 	<div class="container">
-		<form action="/dditLogin" method=post class="form-signin">
+		<form action="/boardLogin" method=post class="form-signin">
 			<h2 class="form-signin-heading">Please sign in</h2>
 			<label for="inputEmail" class="sr-only">Email address</label> 
 			<input	type="text" id="inputId" class="form-control" 
@@ -60,8 +60,8 @@
 
 			<div class="checkbox">
 				<label> 
-				<input type="checkbox" class ="remember-me" name="remember-me" value = "remember" id = "remember"> 
-				Remember me
+					<input type="checkbox" class ="remember-me" name="remember-me" value = "remember" id = "remember"> 
+					Remember me
 				</label>
 			</div>
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign	in</button>
