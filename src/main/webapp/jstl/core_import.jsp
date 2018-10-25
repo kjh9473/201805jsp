@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
  <%--
  	jstl 사용하기 위한 절차
@@ -14,6 +16,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2>times tables jstl</h2>
+<c:import url = "timesTableJstl.jsp">
+	<c:param name = "number" value="5"></c:param>
+</c:import>
 
+<h2>naver search</h2>
+<c:import url="https://search.naver.com/search.naver">
+	<c:param name = "query" value="html5"></c:param>
+</c:import>
 </body>
 </html>

@@ -22,7 +22,7 @@
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
-			String user = "pc24";
+			String user = "pc25";
 			String pass = "java";
 			
 			conn = DriverManager.getConnection(url, user, pass);
