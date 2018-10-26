@@ -90,38 +90,38 @@ public class LoginServlet extends HttpServlet{
 			//이름 [별명]
 			
 			//dispatch
-			RequestDispatcher rd = req.getRequestDispatcher("main.jsp");
-			rd.forward(req,resp);
+//			RequestDispatcher rd = req.getRequestDispatcher("main.jsp");
+//			rd.forward(req,resp);
 		}	
 		//3-2 : login.jsp로 이동
 		else{
 			resp.sendRedirect("login/login.jsp");
 		}
-		
+//		
 	}
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		req.setCharacterEncoding("utf-8");
-		resp.setContentType("text/html; charset=utf-8");
-		PrintWriter pw =resp.getWriter();
-		
-		pw.println("<!DOCTYPE html>");
-		pw.println("	<html>");
-		pw.println("		<head>");
-		pw.println("			<meta charset=\"UTF-8\">");
-		pw.println("			<title>Insert title here</title>");
-		pw.println("		</head>");
-		pw.println("		<body>");
-		
-		//userId : brwon / sally
-		String[] userIds = req.getParameterValues("userId");
-		for(String userId : userIds)
-			pw.println("		userId : " + userId + "<br>");
-		pw.println("		password : " + req.getParameter("password") + "<br>");
-		pw.println("		</body>");
-		pw.println("	</html>");
+//		req.setCharacterEncoding("utf-8");
+//		resp.setContentType("text/html; charset=utf-8");
+//		PrintWriter pw =resp.getWriter();
+//		
+//		pw.println("<!DOCTYPE html>");
+//		pw.println("	<html>");
+//		pw.println("		<head>");
+//		pw.println("			<meta charset=\"UTF-8\">");
+//		pw.println("			<title>Insert title here</title>");
+//		pw.println("		</head>");
+//		pw.println("		<body>");
+//		
+//		//userId : brwon / sally
+//		String[] userIds = req.getParameterValues("userId");
+//		for(String userId : userIds)
+//			pw.println("		userId : " + userId + "<br>");
+//		pw.println("		password : " + req.getParameter("password") + "<br>");
+//		pw.println("		</body>");
+//		pw.println("	</html>");
 	}
 }
 
