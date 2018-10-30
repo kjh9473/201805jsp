@@ -90,8 +90,8 @@ public class LoginServlet extends HttpServlet{
 			//이름 [별명]
 			
 			//dispatch
-//			RequestDispatcher rd = req.getRequestDispatcher("main.jsp");
-//			rd.forward(req,resp);
+			RequestDispatcher rd = req.getRequestDispatcher("main.jsp");
+			rd.forward(req,resp);
 		}	
 		//3-2 : login.jsp로 이동
 		else{
